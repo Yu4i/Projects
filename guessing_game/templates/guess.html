@@ -1,0 +1,25 @@
+<!-- templates/guess.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Guessing Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Make Your Guess!</h1>
+    <p>Chances Left: {{ chances }}</p>
+
+    {% if message %}
+        <p><strong>{{ message }}</strong></p>
+    {% endif %}
+
+    {% if chances > 0 and "win" not in message.lower() and "out of chances" not in message.lower() %}
+    <form method="POST">
+        <input type="number" name="guess" required min="1">
+        <button type="submit">Submit Guess</button>
+    </form>
+    {% else %}
+        <a href="{{ url_for('index') }}">Play Again</a>
+    {% endif %}
+</body>
+</html>

@@ -27,13 +27,13 @@ def game():
         else:
             print("Invalid choice, please select a valid level.")
 
-    # Now you can use the choice:
+   
     num_chances = chances[choice]
     print(f"You have {num_chances} chances. Let the game begin!")
 
-    # Add your guessing logic here...
+    
 
-
+    #GUESSING LOGIC HERE
         
     
     user_tries = chances[choice]
@@ -70,14 +70,6 @@ def game():
                 print("oops, Try again")
                 user_tries -= 1
 
-
-                
-         
-       
-    
-
-    
-   
 
     
 game()
